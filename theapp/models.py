@@ -1,23 +1,23 @@
 from django.db import models
 from django.contrib.auth.models import User
+from tinymce.models import HTMLField
 
 # Create your models here.
 
-# class Snap(models.Model):
-#     snap=  models.ImageField(upload_to='images/', blank=True)
-#     photoname = models.TextField()
-#     photoname = models.TextField()
-#     # upvote = models.ManyToManyField(User)
-#     user = models.ForeignKey(User,on_delete=models.CASCADE)
-#     pub_date = models.DateTimeField(auto_now_add=True)
+class Snap(models.Model):
+    snap=  models.ImageField(upload_to='images/', blank=True)
+    photoname = models.TextField()
+    description = HTMLField()
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    pub_date = models.DateTimeField(auto_now_add=True)
     
-#     # profile = models.ForeignKey(Profile,on_delete=models.CASCADE)
+    # profile = models.ForeignKey(Profile,on_delete=models.CASCADE)
 
-#     # tags = models.ManyToManyField(tags)
+    
 
 
-#     def __str__(self):
-#         return self.snap
+    def __str__(self):
+        return self.snap
 
     # def save_snap(self):
     #     self.save()
