@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 import datetime as dt
 from django.http  import HttpResponse,Http404
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .forms import PostForm
+from .models import Snap
 # Create your views here.
 
 
@@ -13,7 +14,8 @@ from .forms import PostForm
 def posts_of_day(request):
     current_user = request.user
     date = dt.date.today()
-    # images = Image.get_image()
+    snap =  Snap.objects.all()
+
     # comment = Comment.objects.all()
 
     # for image in images:
@@ -23,7 +25,7 @@ def posts_of_day(request):
 
     # comment = Comment.objects.filter(id = current_user.id).first()
     # print(comment)
-    return render(request, 'all-posts/poststoday.html', {"date": date,})
+    return render(request, 'all-posts/poststoday.html', {"date": date,"snap":snap})
 
 
 

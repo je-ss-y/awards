@@ -7,7 +7,7 @@ from tinymce.models import HTMLField
 class Snap(models.Model):
     snap=  models.ImageField(upload_to='images/', blank=True)
     photoname = models.TextField()
-    description = HTMLField()
+    description =models.TextField()
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True)
     

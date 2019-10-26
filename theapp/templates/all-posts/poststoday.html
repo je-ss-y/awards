@@ -3,4 +3,41 @@
 {% block content %}
 {{block.super}}
 
+{% for snap_item in snap %}
+<!--Display  images  -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="jumbotron" style="background-color: transparent;padding:12px">
+        <div class="card" class="rounded-lg" style="width:500px">
+          <p>{{snap_item.user}}</p>
+          <img src="{{snap_item.snap.url}}" class="card-img-top" alt="Image" style="width:200px;height:200px">
+          <div class="card-body">
+            <p>{{snap_item.description}}</p>
+            <p>{{snap_item.photoname}}</p>
+            
+            <p>posted {{snap_item.pub_date|timesince}} ago </p>
+            <hr>
+
+
+
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+</div>
+
+
+
+
+{%endfor%}
 {% endblock %}
