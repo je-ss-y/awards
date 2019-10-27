@@ -24,3 +24,13 @@ class Snap(models.Model):
 
     # def delete_snap(self):
     #     self.delete()
+
+class Profile(models.Model):
+
+    user = models.OneToOneField(User,on_delete=models.CASCADE,related_name='profile')
+    bio = models.TextField()
+    profilepicture= models.ImageField(upload_to='profile/', blank=True)
+
+
+    def __str__(self):
+        return self.profilepicture
