@@ -61,11 +61,11 @@ def profile_form(request):
     return render(request, 'all-posts/profile.html', {"form": form})
 
 
-# @login_required(login_url='/accounts/login/')
-# def user_profile(request):
-#     current_user = request.user
-#     snap = Snap.objects.filter(user=current_user)
-#     profilepicture=Profile.objects.get(user=current_user)
+@login_required(login_url='/accounts/login/')
+def user_profile(request):
+    current_user = request.user
+    snap = Snap.objects.filter(user=current_user)
+    profilepicture=Profile.objects.get(user=current_user)
    
  
-#     return render(request, 'all-posts/profiledisplay.html', {"profilepicture": profilepicture,"snap ":snap })
+    return render(request, 'all-posts/profiledisplay.html', {"profilepicture": profilepicture,"snap ":snap })

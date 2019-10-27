@@ -22,10 +22,6 @@
       </div>
 
 
-      <div class="col-md-4">
-        <span><h3>{{profilepicture.user}}</h3></span>
-
-      </div>
 
       <div class="col-md-4">
         <h4>{{profilepicture.bio}}</h4>
@@ -40,14 +36,5 @@
 <br>
 <br>
 <br>
-<div class = "jumbotron" style="background-color: transparent">
-{% for pro in snap  %}
-<img src="{{pro.snap.url}}" class="rounded-lg" alt="Image" style="width:400px;height:300px">
 
-
-
-
-
-{% endfor %}
-</div>
 {% endblock %}
