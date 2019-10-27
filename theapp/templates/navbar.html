@@ -30,9 +30,7 @@
               </a>
               <ul class="dropdown-menu" role="menu">
                
-                <li>
-                  <a href="{%url 'new_post'%}">Post your project</a>
-                </li>
+               
                 <li>
                   <a href="{%url 'profile'%}">Profile</a>
                 </li>
@@ -54,6 +52,7 @@
 
           {% endif %}
         </div>
+        <button type="button" class="btn btn-outline-secondary" href="{%url 'new_post'%}">Post your project</button>
       </div>
     </div>
   </nav>
