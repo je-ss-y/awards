@@ -20,6 +20,13 @@ class Snap(models.Model):
     def __str__(self):
         return self.snap
 
+
+    @classmethod
+    def search_by_name(cls,search_term):
+        searched_user = cls.objects.filter(user__username__contains=search_term)
+        return  searched_user
+    
+
     # def save_snap(self):
     #     self.save()
 
