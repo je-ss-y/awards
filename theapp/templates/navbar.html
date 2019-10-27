@@ -14,7 +14,7 @@
         <div class="col-sm-6 col-md-6">
           <div class="navbar-header">
 
-            <a href="{% url 'postsToday'  %}">THE AWARD SESSION</a>
+            <a href="{% url 'postsToday'  %}" style="padding-top:30px">THE AWARD SESSION</a>
 
           </div>
         </div>
@@ -22,7 +22,7 @@
         <!-- Adding a search form  -->
         <div>
           <form class="navbar-form" role="search" action="{% url 'search_results' %}"
-            style="padding-left: 280px; padding-top:-40px">
+            style="padding-left: 280px; padding-top:-70px">
 
             <input type="text" class="form-control" placeholder="Search user" name="username">
 
@@ -33,7 +33,7 @@
       </div>
       <!-- search form end -->
 
-      <div class="col-sm-6 col-md-6" style="padding-left: 200px">
+      <div class="col-sm-6 col-md-6" style="padding-left: 750px;padding-top:-150px">
         {% if user.is_authenticated %}
         <ul>
           <a class="dropdown">
