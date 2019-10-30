@@ -30,99 +30,100 @@
 
           </form>
         </div>
-      </div>
+        <!-- end of  search form  -->
 
-      <style>
-        body {
-          font-family: "Lato", sans-serif;
-        }
 
-        .sidenav {
-          height: 100%;
-          width: 0;
-          position: fixed;
-          z-index: 1;
-          top: 0;
-          left: 0;
-          background-color: #111;
-          overflow-x: hidden;
-          transition: 0.5s;
-          padding-top: 60px;
-        }
+        <style>
+          body {
+            font-family: "Lato", sans-serif;
+          }
 
-        .sidenav a {
-          padding: 8px 8px 8px 32px;
-          text-decoration: none;
-          font-size: 25px;
-          color: #818181;
-          display: block;
-          transition: 0.3s;
-        }
-
-        .sidenav a:hover {
-          color: #f1f1f1;
-        }
-
-        .sidenav .closebtn {
-          position: absolute;
-          top: 0;
-          right: 25px;
-          font-size: 36px;
-          margin-left: 50px;
-        }
-
-        @media screen and (max-height: 450px) {
           .sidenav {
-            padding-top: 15px;
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
           }
 
           .sidenav a {
-            font-size: 18px;
-          }
-        }
-      </style>
-      </head>
-
-      <body>
-
-        <div id="mySidenav" class="sidenav">
-          {% if user.is_authenticated %}
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-          <a href="{%url 'profile'%}">Profile</a>
-          <a href="/accounts/password/change">Change Password</a>
-          <a href="/logout">Logout</a>
-          {% else %}
-
-          <li>
-            <a class='btn btn-default' href="/accounts/login">Login</a>
-          </li>
-
-          {% endif %}
-
-        </div>
-
-
-        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
-
-        <script>
-          function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
           }
 
-          function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
+          .sidenav a:hover {
+            color: #f1f1f1;
           }
-        </script>
+
+          .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+          }
+
+          @media screen and (max-height: 450px) {
+            .sidenav {
+              padding-top: 15px;
+            }
+
+            .sidenav a {
+              font-size: 18px;
+            }
+          }
+        </style>
+        </head>
+
+        <body>
+
+          <div id="mySidenav" class="sidenav">
+            {% if user.is_authenticated %}
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="{%url 'profile'%}">Profile</a>
+            <a href="/accounts/password/change">Change Password</a>
+            <a href="/logout">Logout</a>
+            {% else %}
+
+            <li>
+              <a class='btn btn-default' href="/accounts/login">Login</a>
+            </li>
+
+            {% endif %}
+
+          </div>
+
+
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+
+          <script>
+            function openNav() {
+              document.getElementById("mySidenav").style.width = "250px";
+            }
+
+            function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+            }
+          </script>
 
 
 
-    </div> -->
+    
 
 
-    <a href="{%url 'new_post'%}"
-      style="background-color:mediumaquamarine;background-size:55px navbar right;padding-top: 10px">Post your
-      project</a>
-
+      <a href="{%url 'new_post'%}"
+        style="background-color:mediumaquamarine;background-size:55px navbar right;padding-top: 10px">Post your
+        project</a>
+    </div>
     </div>
     </div>
   </nav>
