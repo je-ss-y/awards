@@ -5,7 +5,28 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from .forms import PostForm,ProfileForm
 from .models import Snap,Profile
-# Create your views here.
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .serializer import *
+
+
+
+class MerchList(APIView):
+    def get(self, request, format=None):
+        all_merch = Snap.objects.all()
+        serializers = MerchSerializer(all_merch, many=True)
+        return Response(serializers.data)
+
+
+class ProfList(APIView):
+    def get(self, request, format=None):
+        all_prof = Profile.objects.all()
+        serializers = ProfSerializer(all_prof, many=True)
+        return Response(serializers.data)
+
+
+
+
 
 
 

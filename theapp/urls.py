@@ -9,6 +9,9 @@ urlpatterns=[
     url(r'^profileform', views.profile_form, name='profile'),
     url(r'^profiledisplay', views. user_profile, name='profiledisplay'),
     url(r'^search/', views.search_results, name='search_results'),
+    url(r'^api/merch/$', views.MerchList.as_view(), name='snap'),
+    url(r'^api/pro/$', views.ProfList.as_view(), name='pro')
+
  
 ]
 if settings.DEBUG:

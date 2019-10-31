@@ -69,6 +69,8 @@
               {% if user.is_authenticated %}
               <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
               <a href="{%url 'profile'%}">Profile</a>
+              <a href="{%url 'snap' %}"> api snap</a>
+              <a href="{%url 'pro' %}"> api profile</a>
               <a href="/accounts/password/change">Change Password</a>
               <a href="/logout">Logout</a>
               {% else %}
