@@ -23,4 +23,11 @@ class ProfileForm(forms.ModelForm):
         # widgets = {
         #     'tags': forms.CheckboxSelectMultiple(),
         # }
+
+
+# class VoteForm(forms.ModelForm):
+#     class Meta:
+#         model = Snap
+#         fields = ['design','usability','content']
+
         

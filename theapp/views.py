@@ -13,7 +13,7 @@ from .models import Snap,Profile
 @login_required(login_url='/accounts/login/')
 def posts_of_day(request):
     current_user = request.user
-    date = dt.date.today()
+   
     snap =  Snap.objects.all()
 
     # comment = Comment.objects.all()
@@ -25,7 +25,7 @@ def posts_of_day(request):
 
     # comment = Comment.objects.filter(id = current_user.id).first()
     # print(comment)
-    return render(request, 'all-posts/poststoday.html', {"date": date,"snap":snap})
+    return render(request, 'all-posts/poststoday.html', {"snap":snap})
 
 
 
@@ -84,3 +84,7 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'all-posts/search.html',{"message":message})
+
+
+
+

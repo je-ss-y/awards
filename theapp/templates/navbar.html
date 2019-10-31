@@ -11,28 +11,8 @@
   <nav class="navbar navbar-inverse">
     <div class="container">
       <div class="row">
-        <div class="col-sm-3 col-md-3">
-          <div class="navbar-header">
 
-            <a href="{% url 'postsToday'  %}" style="padding-top:30px">THE AWARD SESSION</a>
-
-          </div>
-        </div>
-
-        <!-- Adding a search form  -->
-        <div class="col-sm-5 col-md-5">
-          <form class="navbar-form" role="search" action="{% url 'search_results' %}"
-            style="padding-left: 280px; padding-top:-70px">
-
-            <input type="text" class="form-control" placeholder="Search user" name="username">
-
-
-
-          </form>
-        </div>
-        <!-- end of  search form  -->
-
-
+        <!-- Adding home link award session  -->
         <style>
           body {
             font-family: "Lato", sans-serif;
@@ -82,9 +62,8 @@
             }
           }
         </style>
-        </head>
-
-        <body>
+         
+      
           <div class="col-sm-2 col-md-2">
             <div id="mySidenav" class="sidenav">
               {% if user.is_authenticated %}
@@ -115,16 +94,42 @@
               document.getElementById("mySidenav").style.width = "0";
             }
           </script>
+          <!-- Adding home link award session  -->
 
 
 
+           <!-- Adding home link award session  -->
+        <div class="col-sm-3 col-md-3">
+          <div class="navbar-header">
+
+            <a href="{% url 'postsToday'  %}" style="padding-top:30px">THE AWARD SESSION</a>
+
+          </div>
+        </div>
+           <!-- end home link award session  -->
+
+        <!-- Adding a search form  -->
+        <div class="col-sm-5 col-md-5">
+          <form class="navbar-form" role="search" action="{% url 'search_results' %}"
+            style="padding-left: 280px; padding-top:-70px">
+
+            <input type="text" class="form-control" placeholder="Search user" name="username">
+
+
+
+          </form>
+        </div>
+        <!-- end of  search form  -->
+
+ 
 
 
           <div class="col-sm-2 col-md-2">
             <a href="{%url 'new_post'%}"
               style="background-color:mediumaquamarine;background-size:55px navbar right;padding-top: 10px">Post your
               project</a>
-          </div>
+
+               </div>
       </div>
     </div>
     </div>

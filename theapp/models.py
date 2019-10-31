@@ -5,11 +5,13 @@ from tinymce.models import HTMLField
 # Create your models here.
 
 class Snap(models.Model):
-    snap=  models.ImageField(upload_to='images/', blank=True)
+    image=  models.ImageField(upload_to='images/', blank=True)
     photoname = models.TextField()
     description =models.TextField()
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True)
+    link =  models.URLField(max_length=200)
+    
     
     
     # profile = models.ForeignKey(Profile,on_delete=models.CASCADE)
@@ -42,3 +44,6 @@ class Profile(models.Model):
 
     def __str__(self):
         return self.profilepicture
+
+
+

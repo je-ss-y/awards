@@ -1,9 +1,9 @@
 {%extends 'all-posts/base.html'%}
-
+{% load bootstrap4 %}
 {% block content %}
 {{block.super}}
 <div class="row">
-{% for snap_item in snap %}
+{% for image_item in snap %}
 <!--Display  images  -->
 <div class="container">
   
@@ -11,13 +11,16 @@
       <div  style="background-color: transparent;padding:12px">
         
         <div class="card" class="rounded-lg" style="width:450px">
-          <p>{{snap_item.user}}</p>
-          <img src="{{snap_item.snap.url}}" class="card-img-top" alt="Image" style="width:450px;height:300px">
-          <div class="card-body">
-            <p>{{snap_item.description}}</p>
-            <p>{{snap_item.photoname}}</p>
-            
-            <p>posted {{snap_item.pub_date|timesince}} ago </p>
+        
+            <div class="card-body">
+{% if image_item.image %}
+              <img src="{{image_item.image.url}}" alt="jiji">
+              {% endif %}
+              <p>{{image_item.user}}</p>
+            <p>{{image_item.description}}</p>
+            <p>{{image_item.photoname}}</p>
+                        
+            <p>posted {{image_item.pub_date|timesince}} ago </p>
             <hr>
 
 
