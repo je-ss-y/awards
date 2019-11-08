@@ -1,69 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-
 <body>
-  <nav class="navbar navbar-inverse">
-    <div class="container">
-      <div class="row">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+       <a href="{% url 'postsToday'  %}" style="padding-top:30px">THE AWARD SESSION</a>
+    </div>
+      <!-- Adding a search form  -->
+      <div>
+        <form class="navbar-form" role="search" action="{% url 'search_results' %}" style="padding-left: 280px; padding-top:-40px">
 
-        <!-- Adding home link award session  -->
-        <style>
-          body {
-            font-family: "Lato", sans-serif;
-          }
+            <input type="text" class="form-control" placeholder="Search user" name="username">
+            
+        
 
-          .sidenav {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-          }
-
-          .sidenav a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-          }
-
-          .sidenav a:hover {
-            color: #f1f1f1;
-          }
-
-          .sidenav .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-          }
-
-          @media screen and (max-height: 450px) {
-            .sidenav {
-              padding-top: 15px;
-            }
-
-            .sidenav a {
-              font-size: 18px;
-            }
-          }
+        </form>
+      </div>
+      <style>
+        body {
+          font-family: "Lato", sans-serif;
+          transition: background-color .5s;
+        }
+        
+        .sidenav {
+          height: 100%;
+          width: 0;
+          position: fixed;
+          z-index: 1;
+          top: 0;
+          left: 0;
+          background-color: #111;
+          overflow-x: hidden;
+          transition: 0.5s;
+          padding-top: 60px;
+        }
+        
+        .sidenav a {
+          padding: 8px 8px 8px 32px;
+          text-decoration: none;
+          font-size: 25px;
+          color: #818181;
+          display: block;
+          transition: 0.3s;
+        }
+        
+        .sidenav a:hover {
+          color: #f1f1f1;
+        }
+        
+        .sidenav .closebtn {
+          position: absolute;
+          top: 0;
+          right: 25px;
+          font-size: 36px;
+          margin-left: 50px;
+        }
+        
+        #main {
+          transition: margin-left .5s;
+          padding: 16px;
+        }
+        
+        @media screen and (max-height: 450px) {
+          .sidenav {padding-top: 15px;}
+          .sidenav a {font-size: 18px;}
+        }
         </style>
+        </head>
+        <body>
+        
          
-      
           <div class="col-sm-4 col-md-4">
             <div id="mySidenav" class="sidenav">
               {% if user.is_authenticated %}
@@ -84,53 +95,30 @@
 
             </div>
           </div>
-
-
-          <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; </span>
-
-          <script>
-            function openNav() {
-              document.getElementById("mySidenav").style.width = "250px";
-            }
-
-            function closeNav() {
-              document.getElementById("mySidenav").style.width = "0";
-            }
-          </script>
-          <!-- Adding home link award session  -->
-
-
-
-           <!-- Adding home link award session  -->
-        <div class="col-sm-4 col-md-4">
-          <div class="navbar-header">
-
-            <a href="{% url 'postsToday'  %}" style="padding-top:30px">THE AWARD SESSION</a>
-
-          </div>
+        <div id="main">
+          
+          <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Ishakiro</span>
         </div>
-           <!-- end home link award session  -->
-
-        <!-- Adding a search form  -->
-        <div class="col-sm-4 col-md-4">
-          <form class="navbar-form" role="search" action="{% url 'search_results' %}"
-            style="width: 80px; padding-top:-70px">
-
-            <input type="text" class="form-control" placeholder="Search user" name="username">
-
-
-
-          </form>
-        </div>
-        <!-- end of  search form  -->
-
- 
-
-
+        
+        <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("main").style.marginLeft = "250px";
+          document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("main").style.marginLeft= "0";
+          document.body.style.backgroundColor = "white";
+        }
+        </script>
+           
+        </body>
       </div>
-    </div>
-    </div>
-  </nav>
-</body>
+      <!-- search form end -->
 
+  </div>
+</nav>
+</body>
 </html>
