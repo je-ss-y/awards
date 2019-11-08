@@ -6,6 +6,7 @@
 * Click on a single photo to expand it and also view the details of the photo. The photo details will    appear on a modal within the same route as the main page.
 * a user can Search for another user
 * a user can like and comment on a post
+* a user can view and rate other user's project
 ### Technologies used
 * html
 * css\bootstrap
